@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE overlay SYSTEM "chrome://escape/locale/overlay.dtd">
+<overlay id="sample"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="ctypes/NSS.js" />
+  <script src="ctypes/NSPR.js" />
+  <script src="ctypes/Serialization.js" />
+  <script src="ssl/CertificateInfo.js" />
+  <script src="Logger.js"/>
+  <script src="escape.js"/>
+
+  <stringbundleset>
+    <stringbundle id="strings-main" 
+      src="chrome://escape/locale/strings.properties"/>
+  </stringbundleset>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="escape-button" class="toolbarbutton-1"
+      type="menu-button" autoCheck="false"
+      label="&label.toolbarbutton;" 
+      oncommand="Escape.onToolBarClick(event);">
+
+      <menupopup>
+        <menuitem label="&label.menu-toggle;" id="escape-menu-toggle"/>
+        <menuitem label="&label.options;"
+          oncommand="window.openDialog(
+            'chrome://escape/content/options.xul', 'dialog', 'modal');"/>
+        <menuitem label="&label.display-cert-label;" id="display-cert-label" 
+          collapsed="true" oncommand="Escape.displayCertificate();"/>
+      </menupopup>
+
+    </toolbarbutton>
+  </toolbarpalette>
+
+</overlay>

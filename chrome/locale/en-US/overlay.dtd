@@ -1,0 +1,5 @@
+<!ENTITY label.toolbarbutton "Escape">
+<!ENTITY label.menu-toggle "Disable">
+<!ENTITY label.menu-toggleEnable "Enable">
+<!ENTITY label.options "Options">
+<!ENTITY label.display-cert-label "Display certificate">

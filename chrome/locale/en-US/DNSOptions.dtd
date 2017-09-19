@@ -1,0 +1,6 @@
+<!ENTITY dialog.DNSOptions-title "Add a DNS Server for Escape">
+<!ENTITY dialog.cancel "Cancel">
+<!ENTITY dialog.ok "Ok">
+<!ENTITY label.window-description "Escape will use the DNS server for querying DNS.">
+<!ENTITY label.ip "DNS Server IP:">
+<!ENTITY label.description "Description (optional):">

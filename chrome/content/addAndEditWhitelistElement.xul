@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE overlay SYSTEM "chrome://escape/locale/whitelistOptions.dtd">
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog buttons="accept,cancel" id="add-and-edit-wl" 
+  buttonlabelcancel="&dialog.cancel;"
+  buttonlabelaccept="&dialog.ok;"
+  ondialogaccept="return onDialogOK();"
+  onload="onDialogLoad();" title="&dialog.whitelistOptions-title;" 
+  width="715" height="250"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="addAndEditWhitelistElement.js" />
+
+  <stringbundleset>
+    <stringbundle id="strings-addAndEditWLElment" 
+      src="chrome://escape/locale/strings.properties"/>
+  </stringbundleset>
+
+  <vbox>
+    <description style="white-space: pre;">&description.value;</description>
+    <separator />
+    <grid>
+      <columns>
+        <column/>
+        <column flex="1" />
+      </columns>
+      <rows>
+        <row align="baseline">
+          <label value="&label.host;" control="host" flex="1" />
+          <textbox id="host" flex="1" />
+        </row>
+        <row align="baseline">
+          <label value="&label.sni;" control="sni"/>
+          <textbox id="sni" flex="1"/>
+        </row>
+        <row align="baseline">
+          <label value="&label.encapsulation;" control="encapsulation"/>
+          <checkbox id="encapsulation" flex="1"/>
+        </row>
+        <row align="baseline">
+          <label value="&label.exception;" control="exception"/>
+          <checkbox id="exception" flex="1"/>
+        </row>
+       </rows>
+     </grid>
+   <separator />
+  </vbox>
+</dialog>

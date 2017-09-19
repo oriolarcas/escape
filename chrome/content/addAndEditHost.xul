@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE overlay SYSTEM "chrome://escape/locale/hostOptions.dtd">
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog buttons="accept,cancel" id="add-and-edit-host" 
+  buttonlabelcancel="&dialog.cancel;"
+  buttonlabelaccept="&dialog.ok;"
+  ondialogaccept="return onDialogOK();"
+  onload="onDialogLoad();" title="&dialog.hostOptions-title;" 
+  width="715" height="205"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="addAndEditHost.js" />
+
+  <stringbundleset>
+    <stringbundle id="strings-addAndEditHost" 
+      src="chrome://escape/locale/strings.properties"/>
+  </stringbundleset>
+
+  <vbox>
+    <label value="&label.description;" />
+    <separator />
+    <grid>
+      <columns>
+        <column/>
+        <column flex="1" />
+      </columns>
+      <rows>
+        <row align="baseline">
+          <label value="&label.host;" control="host" flex="1" />
+          <textbox id="host" flex="1" />
+        </row>
+        <row align="baseline">
+          <label value="&label.ip;" control="ip"/>
+          <textbox id="ip" flex="1"/>
+        </row>
+       </rows>
+     </grid>
+   <separator />
+  </vbox>
+</dialog>

@@ -1,0 +1,10 @@
+<!ENTITY dialog.whitelistOptions-title "Enable Escape for:">
+<!ENTITY dialog.cancel "Cancel">
+<!ENTITY dialog.ok "Ok">
+<!ENTITY description.value "You can type a (javascript) regular expression, use the * (globbing operator) or enter the exact url path
+(example.com/foo/bar) into the ”Website” field.
+Leave the ”SNI” field blank for a random value.">
+<!ENTITY label.host "Website:">
+<!ENTITY label.sni "SNI:">
+<!ENTITY label.encapsulation "Encapsulation:">
+<!ENTITY label.exception "Certificate exception:">

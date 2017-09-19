@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE overlay SYSTEM "chrome://escape/locale/DNSOptions.dtd">
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog buttons="accept,cancel" id="add-and-edit-host" 
+  buttonlabelcancel="&dialog.cancel;"
+  buttonlabelaccept="&dialog.ok;"
+  ondialogaccept="return onDialogOK();"
+  title="&dialog.DNSOptions-title;" 
+  width="715" height="205"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <script src="addDNSServer.js" />
+
+  <stringbundleset>
+    <stringbundle id="strings-addDNSServer" 
+      src="chrome://escape/locale/strings.properties"/>
+  </stringbundleset>
+
+  <vbox>
+    <label value="&label.window-description;" />
+    <separator />
+    <grid>
+      <columns>
+        <column/>
+        <column flex="1" />
+      </columns>
+      <rows>
+        <row align="baseline">
+          <label value="&label.ip;" control="dns-ip" flex="1" />
+          <textbox id="dns-ip" flex="1" />
+        </row>
+        <row align="baseline">
+          <label value="&label.description;" control="dns-desc"/>
+          <textbox id="dns-desc" flex="1"/>
+        </row>
+       </rows>
+     </grid>
+   <separator />
+  </vbox>
+</dialog>

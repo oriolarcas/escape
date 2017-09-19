@@ -1,0 +1,7 @@
+content escape chrome/content/
+locale escape en-US chrome/locale/en-US/
+overlay chrome://browser/content/browser.xul chrome://escape/content/escape.xul
+style chrome://browser/content/escape.xul chrome://escape/style/toolbar.css
+
+component {3daeab00-0131-11e4-9191-0800200c9a66} components/Escape.js
+contract @ant0ine.g0ich0t.fr/escape;1 {3daeab00-0131-11e4-9191-0800200c9a66}

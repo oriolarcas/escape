@@ -1,0 +1,6 @@
+<!ENTITY dialog.hostOptions-title "Enable Escape for:">
+<!ENTITY dialog.cancel "Cancel">
+<!ENTITY dialog.ok "Ok">
+<!ENTITY label.description "Escape will use the IP address you specify instead of querying DNS when resolving the host.">
+<!ENTITY label.host "Host (whithout “https“):">
+<!ENTITY label.ip "IP:">

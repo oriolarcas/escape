@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dialog SYSTEM "chrome://escape/locale/options.dtd">
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<dialog id="options"
+  title="&dialog.options-title;"
+  buttonlabelcancel="&dialog.options-cancel;"
+  buttonlabelaccept="&dialog.options-save;"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  width="750" buttons="accept,cancel" onload="onOptionsLoad();"
+  ondialogaccept="return onOptionsSave();">
+
+  <script src="Logger.js"/>
+  <script src="options.js" />
+
+  <stringbundleset>
+    <stringbundle id="strings-opt" 
+      src="chrome://escape/locale/strings.properties"/>
+  </stringbundleset>
+
+  <tabbox flex="1">
+    <tabs>
+      <tab label="&tab.whitelist;"/>
+      <tab label="&tab.dns;"/>
+      <tab label="&tab.about;"/>
+    </tabs>
+
+    <tabpanels>
+      <tabpanel id="whitelistTab" flex="1">
+        <hbox flex="1">
+          <tree id="whitelistTree" height="300" align="stretch" flex="1" 
+            editable="true" persist="sortDirection" sortDirection="natural" >
+            <treecols>
+              <treecol id="whitelist" label="&treecol.whitelist;"
+                flex="1" editable="false" primary="true" 
+                onclick="sortWhitelist(this);" sortDirection="DESC"/>
+              <splitter class="tree-splitter" />
+              <treecol id="sni" label="&treecol.sni;"
+                flex="1" editable="false" primary="true" 
+                onclick="sortWhitelist(this);" sortDirection="DESC"/>
+              <splitter class="tree-splitter" />
+              <treecol id="exception" label="&treecol.exception;"
+                flex="0" editable="false" primary="false" 
+                onclick="sortWhitelist(this);" sortDirection="DESC"/>
+              <treecol id="encapsulation" label="&treecol.encapsulation;"
+                flex="0" editable="false" primary="false" hidden="true"
+                onclick="sortWhitelist(this);" sortDirection="DESC"/>
+              <splitter class="tree-splitter" />
+              </treecols>
+            <treechildren />
+          </tree>
+
+          <separator />
+
+          <vbox flex="0">
+            <button id="add-wl-button" pack="start" label="&button.addWL;" 
+              onclick="onAddWhitelistElement();" />
+            <button id="edit-wl-button" pack="start" label="&button.editWL;" 
+              onclick="onEditWhitelistElement();" />
+            <button id="remove-wl-button" pack="start" label="&button.removeWL;"
+              onclick="onRemoveWhitelistElement();" />
+            <button id="clear-wl-button" pack="start" label="&button.clearWL;" 
+              onclick="onClearWhitelist();"/>
+
+          </vbox>
+        </hbox>
+      </tabpanel>
+      
+      <tabpanel id="dnsTab" orient="vertical">
+        <hbox flex="1">
+          <vbox flex="1">
+            <label value="&label.dns-conf;"/>
+            <radiogroup id="dns-conf">
+            <grid>
+              <columns>
+                <column/>
+                <column flex="1" />
+              </columns>
+              <rows>
+                <row align="baseline">
+                  <radio id="dns-conf-syst" label="&label.dns-conf-syst;" />
+                  <spacer flex="1"/>
+                </row>
+                <row align="baseline">
+                  <radio id="dns-conf-cust" label="&label.dns-conf-cust;"/>
+                  <menulist id="dns-menulist">
+                    <menupopup id="dns-menupopup" /> 
+                  </menulist>
+                </row>
+                <row>
+                  <spacer flex="1"/>
+                  <hbox flex="1">
+                    <button flex="1" id="dns-add" 
+                    label="&button.dns-conf-cust-add;"
+                    onclick="onAddDNSServer();"/>
+                    <button flex="1" id="dns-remove" 
+                    label="&button.dns-conf-cust-remove;"
+                    onclick="onRemoveDNSServer();"/>
+                  </hbox>
+                </row>
+                <row align="baseline">
+                  <radio id="dns-conf-loc" label="&label.dns-conf-loc;" />
+                  <spacer flex="1"/>
+                </row>
+              </rows>
+            </grid>
+            </radiogroup>
+
+
+            <tree id="hostsTree" height="300" align="stretch" flex="1" 
+              editable="true" persist="sortDirection" sortDirection="natural" >
+              <treecols>
+                <treecol id="host" label="&treecol-dns.host;"
+                  flex="1" editable="false" primary="true" 
+                  onclick="sortHosts(this);" sortDirection="DESC"/>
+                <splitter class="tree-splitter" />
+                <treecol id="ip" label="&treecol-dns.ip;"
+                  flex="1" editable="false" primary="true" 
+                  onclick="sortHosts(this);" sortDirection="DESC"/>
+                </treecols>
+              <treechildren />
+            </tree>
+          </vbox>
+
+
+          <vbox flex="0">
+            <button id="add-h-button" pack="start" label="&button.addH;" 
+              onclick="onAddHost();" />
+            <button id="edit-h-button" pack="start" label="&button.editH;" 
+              onclick="onEditHost();" />
+            <button id="remove-h-button" pack="start" label="&button.removeH;"
+              onclick="onRemoveHost();" />
+            <button id="clear-h-button" pack="start" label="&button.clearH;"
+              onclick="onClearHost();"/>
+          </vbox>
+        </hbox>
+        
+      </tabpanel>
+      
+      <tabpanel id="aboutTab" orient="vertical">
+        <label value="&label.about-tilte;"/>
+        <spacer style="min-height: 1em;" />
+        <description style="white-space: pre;">&description.about-desc;</description>
+      </tabpanel>
+      
+    </tabpanels>
+  </tabbox>
+
+
+</dialog>

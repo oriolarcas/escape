@@ -1,0 +1,29 @@
+<!ENTITY dialog.options-title "Escape Preferences">
+<!ENTITY dialog.options-cancel "Cancel">
+<!ENTITY dialog.options-save "Save">
+<!ENTITY tab.whitelist "Bypassing HTTPS filtering">
+<!ENTITY tab.dns "Bypassing DNS filtering">
+<!ENTITY tab.about "About Escape">
+<!ENTITY treecol.whitelist "HTTPS Website">
+<!ENTITY treecol.sni "Overwritten SNI value">
+<!ENTITY treecol.exception "Allow Cert. exception">
+<!ENTITY treecol.encapsulation "Encapsulation">
+<!ENTITY button.addWL "Add a website">
+<!ENTITY button.editWL "Edit a website">
+<!ENTITY button.removeWL "Remove a website">
+<!ENTITY button.clearWL "Clear all">
+<!ENTITY treecol-dns.host "HTTPS Host">
+<!ENTITY treecol-dns.ip "IP">
+<!ENTITY label.dns-conf "DNS configuration:">
+<!ENTITY label.dns-conf-syst "System Configuration">
+<!ENTITY label.dns-conf-cust "DNS Server:">
+<!ENTITY label.dns-conf-loc "Local resolution:">
+<!ENTITY button.dns-conf-cust-add "Add a server">
+<!ENTITY button.dns-conf-cust-remove "Remove the selected server">
+<!ENTITY button.addH "Add a host">
+<!ENTITY button.editH "Edit a host">
+<!ENTITY button.removeH "Remove a host">
+<!ENTITY button.clearH "Clear all">
+<!ENTITY label.about-tilte "Escape is a tool to show HTTPS blocked content (by firewalls, compagnies, governments ...).">
+<!ENTITY description.about-desc "It should not work according to the blocking policy.
+It is recommended to use it with Force-TLS or HTTPS Everywhere to force Firefox to use HTTPS">
